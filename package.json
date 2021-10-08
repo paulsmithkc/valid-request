@@ -1,0 +1,34 @@
+{
+  "name": "valid-request-joi",
+  "version": "0.0.1",
+  "description": "Express middleware for validating the request with Joi.",
+  "keywords": [
+    "express",
+    "middleware",
+    "validate",
+    "validator",
+    "validation",
+    "request",
+    "body",
+    "joi"
+  ],
+  "main": "index.js",
+  "author": "Paul Smith",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsmithkc/valid-request.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulsmithkc/valid-request/issues"
+  },
+  "homepage": "https://github.com/paulsmithkc/valid-request#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.4.2"
+  },
+  "peerDependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.4.2"
+  }
+}
