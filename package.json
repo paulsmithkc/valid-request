@@ -1,6 +1,6 @@
 {
   "name": "valid-request-joi",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Express middleware for validating the request with Joi.",
   "keywords": [
     "express",
