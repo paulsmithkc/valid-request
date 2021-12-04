@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - Nothing currently
 
-## [1.0.0] - 2021-10-05
+## [1.0.0] - 2021-12-04
 - Initial version released
 
 [Unreleased]: https://github.com/paulsmithkc/valid-request/compare/v1.0.0...HEAD
