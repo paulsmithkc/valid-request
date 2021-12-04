@@ -14,15 +14,16 @@ app.use(express.json());
 
 // data
 const products = [
-  { _id: ObjectId(), name: 'Product 1', category: 'Category 1' },
-  { _id: ObjectId(), name: 'Product 2', category: 'Category 2' },
-  { _id: ObjectId(), name: 'Product 3', category: 'Category 3' },
+  { _id: ObjectId(), name: 'Product 1', category: 'Category 1', price: 1.23 },
+  { _id: ObjectId(), name: 'Product 2', category: 'Category 2', price: 4.56 },
+  { _id: ObjectId(), name: 'Product 3', category: 'Category 3', price: 7.89 },
 ];
+const getProduct = (productId) => {
+  return products.find((product) => product._id.equals(productId));
+};
 const updateProduct = (productId, update) => {
   const product = products.find((p) => p._id.equals(productId));
-  if (!product) {
-    throw Error(`Product ${productId} not found!`);
-  } else {
+  if (product) {
     for (const key in update) {
       product[key] = update[key];
     }
@@ -54,15 +55,22 @@ app.post(
   '/api/product/:productId',
   validRequest(updateProductSchema),
   (req, res, next) => {
-    const productId = req.params.productId;
+    const productId = new ObjectId(req.params.productId);
     const update = req.body;
-    updateProduct(productId, update);
-    return res.json({ success: 'Product Updated!' });
+
+    const product = getProduct(productId);
+    if (!product) {
+      return res.status(404).json({ error: `Product ${productId} not found!` });
+    } else {
+      updateProduct(productId, update);
+      return res.json({ success: 'Product Updated!' });
+    }
   }
 );
 
 // error handler
 app.use((err, req, res, next) => {
+  console.error(err);
   return res.status(err.status || 500).json({ error: err });
 });
 
