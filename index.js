@@ -31,11 +31,10 @@ function validRequest(schema) {
     }
 
     if (anyErrors) {
-      return next({
-        status: 400,
-        message: 'Request data is invalid. See details.',
-        details: errors,
-      });
+      const error = new Error('Request data is invalid. See details.');
+      error.status = 400;
+      error.details = errors;
+      return next(error);
     } else {
       return next();
     }

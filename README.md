@@ -16,10 +16,10 @@ const Joi = require('joi');
 Define a schema:
 ```js
 const updateProductSchema = {
-  params: Joi.objectId({
+  params: Joi.object({
     productId: Joi.string().pattern(/^[0-9a-fA-F]{24}$/, 'ObjectId').required()
   }),
-  body: Joi.objectId({
+  body: Joi.object({
     name: Joi.string().trim().required(),
     category: Joi.string().trim().required(),
     price: Joi.number().min(0).precision(2).required(),

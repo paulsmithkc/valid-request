@@ -13,6 +13,9 @@
     "joi"
   ],
   "main": "index.js",
+  "scripts": {
+    "example": "npx nodemon ./examples/server.js"
+  },
   "author": "Paul Smith",
   "license": "MIT",
   "repository": {
@@ -23,12 +26,14 @@
     "url": "https://github.com/paulsmithkc/valid-request/issues"
   },
   "homepage": "https://github.com/paulsmithkc/valid-request#readme",
-  "devDependencies": {
-    "express": "^4.17.1",
-    "joi": "^17.4.2"
-  },
   "peerDependencies": {
     "express": "^4.17.1",
     "joi": "^17.4.2"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongodb": "^4.2.1"
   }
 }
